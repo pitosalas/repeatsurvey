@@ -1,4 +1,14 @@
 Repeatsurvey::Application.routes.draw do
+  resources :values
+  resources :items
+
+  resources :programs do
+    resources :rounds 
+    resources :items
+  end
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
