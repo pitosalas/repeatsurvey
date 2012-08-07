@@ -8,6 +8,7 @@ gem 'rails', '3.2.7'
 group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails'
+	gem 'pry-rails'
 end
 
 
@@ -24,6 +25,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'american_date'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+
 
 group :test do
 	gem 'capybara'
