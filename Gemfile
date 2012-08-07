@@ -26,8 +26,8 @@ end
 
 gem 'jquery-rails'
 gem 'american_date'
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'active_scaffold'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 
 group :test do

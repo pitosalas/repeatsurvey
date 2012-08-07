@@ -1,16 +1,17 @@
 Repeatsurvey::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  resources :values
-  resources :items
+  namespace :admin do
+    resources :values do as_routes end
+    resources :questions do as_routes end
+    resources :respondents do as_routes end
+    resources :programs do as_routes end
+    resources :rounds do as_routes end
+  end
 
   resources :programs do
     resources :rounds 
     resources :respondents
-    resources :items
+    resources :questions
   end
 
   # The priority is based upon order of creation:

@@ -17,7 +17,7 @@ namespace :import do
 		prog = Program.first
 		surv.n_questions.times do |x|
 			puts "Adding question #{surv.question(x-1).text} [#{surv.question(x-1).index}]"
-			prog.question.create(text: surv.question(x-1).text, order: surv.question(x-1).index)
+			prog.questions.create(text: surv.question(x-1).text, order: surv.question(x-1).index)
 		end
 	end
 
@@ -27,36 +27,46 @@ namespace :import do
 		rcount = 0
 		surv.rounds.each do |rnd|
 			puts "Adding round #{rcount}, start: #{rnd.start}, fin: #{rnd.fin}"
-			prog.round.create(number: rcount, start: rnd.start, fin: rnd.fin)
+			prog.rounds.create(number: rcount, start: rnd.start, fin: rnd.fin)
 			rcount += 1
 		end
 	end
 
 	desc "create respondent records"
 		task :respondents => :environment do
-		Respondent.create(:name => "Rachel")
-		Respondent.create(:name => "Jeremy")
-		Respondent.create(:name => "Sam")
-		Respondent.create(:name => "Eitan")
-		Respondent.create(:name => "Kendall")
-		Respondent.create(:name => "Avishek")
-		Respondent.create(:name => "Mustapha")
-		Respondent.create(:name => "Shu-Lin")
-		Respondent.create(:name => "Fatima")
-		Respondent.create(:name => "Ezra")
-		Respondent.create(:name => "Tom")
-		puts "Added 11 Students from JBS 2012"
+		prog = Program.first
+
+		prog.respondents.create(:name => "Unknown")
+		prog.respondents.create(:name => "Rachel")
+		prog.respondents.create(:name => "Jeremy Coffman")
+		prog.respondents.create(:name => "Sam")
+		prog.respondents.create(:name => "Eitan")
+		prog.respondents.create(:name => "Kendall")
+		prog.respondents.create(:name => "Avishek Neupane")
+		prog.respondents.create(:name => "Mustapha Isa")
+		prog.respondents.create(:name => "Shu Lin")
+		prog.respondents.create(:name => "Fatima")
+		prog.respondents.create(:name => "Ezra")
+		prog.respondents.create(:name => "Tom")
+		puts "Added Unknown + 11 Students from JBS 2012"
 	end
 
 	desc "import all the individual cells of data"
 	task :data => [:program, :questions, :rounds, :respondents] do
 		prog = Program.first
 		Round.all.each do |rnd|
+			puts "Adding data items for Round #{rnd.number}"
 			Question.all.each do |qst|
 				((rnd.start)..(rnd.fin)).each do 
 					|resp_row|
 		 			Value.create do |v|
 		 				cell = surv.cell(qst.order, resp_row)
+		 				who = surv.cell(30, resp_row)
+		 				if (resp = Respondent.find(:first, :conditions => ["name LIKE ?", who]))
+		 					v.respondent = resp
+		 				else
+		 					v.respondent = Respondent.find_by_name("Unknown")
+		 				end
 						v.value = !cell.nil? ? (Response.string2choice(cell)) : nil
 						v.question = qst
 						v.round = rnd
@@ -80,7 +90,6 @@ namespace :import do
 		bulk_destroy Respondent
 		bulk_destroy Round
 		bulk_destroy Question
-		bulk_destroy Program
 		bulk_destroy Value
 	end
 end
