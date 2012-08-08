@@ -9,6 +9,8 @@ group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'pry-rails'
+  gem 'hirb'
+
 end
 
 
@@ -28,6 +30,10 @@ end
 gem 'jquery-rails'
 gem 'american_date'
 gem 'active_scaffold'
+gem 'will_paginate', '~> 3.0.0'
+gem 'bootstrap-will_paginate'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails'
 
 
 group :test do

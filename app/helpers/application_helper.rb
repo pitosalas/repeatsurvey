@@ -1,10 +1,8 @@
 module ApplicationHelper
-   def debug_me
-      if true
-         content_tag(:p, debug(params)) +
-         content_tag(:p, debug(@round)) +
-         content_tag(:p, debug(@prog))
-      end
+   def debug_enable enabled, *list
+      result = ""
+      list.each { |e| result += debug(e) } if enabled
+      result.html_safe
    end
 
    def f2s num

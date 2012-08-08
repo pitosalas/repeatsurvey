@@ -1,0 +1,20 @@
+<h2>Respondent: <%= @respondent.name %></h2>
+  <p>This respondent has answered at least some of the questions asked as part of this program: <%= @program.name %>. There were <%= @questions.length %> questions total, although notice that in each round not all questions are always asked. The organized might add or disable questions for one round or another, although that would be unusual. <p>
+
+    <h4>Summary of responses across all rounds for <%= @respondent.name %></h4>
+
+    <% @questions.in_groups_of(4) do |group| %>
+      <div class="row">
+        <% group.each do |item| %>
+          <div class="span3">
+            <% if item.nil? %>
+              n/a
+            <% else %>
+              <%= item.text %>
+              <% d = DataHolder.get(question: item.id, respondent: @respondent.id, round: :all) %>
+              <%= d %>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>

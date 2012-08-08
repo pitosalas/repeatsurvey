@@ -1,6 +1,6 @@
-<h1>Round <%= @round.number %> for Program "<%= @program.name %>"</h1>
+<h1>Round <%= @round.number %> for <%= link_to(("Program '" + @program.name + "'"), program_path(@program)) %></h1>
 
-<table class="table table-condensed">
+<table class="table table-bordered table-condensed display">
    <thead>
       <tr>
          <th>Question</th>
@@ -9,8 +9,9 @@
       </tr>
    </thead>
    <tbody>
-      <%= render @questions || "There are no questions yet" %>
+      <%= render(partial: "questions/question_for_round", 
+                 collection: @questions, as: :question) %>
    </tbody>
 </table>
-
-<%= debug_me %>
+   
+<%= will_paginate (@questions) %>

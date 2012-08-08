@@ -1,5 +1,11 @@
 Repeatsurvey::Application.routes.draw do
 
+  get "respondent/show"
+
+  get "respondent/index"
+
+  get "programs/index"
+
   get "rounds/report"
 
   namespace :admin do

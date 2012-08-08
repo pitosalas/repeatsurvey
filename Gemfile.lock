@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: a6bde0aed270e9d3dac239d331f84f9c22817750
+  specs:
+    jquery-datatables-rails (1.10.0)
+      jquery-rails
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: ca703a2349e9a0c26dc5a8a5bb8f5d6dee3b0cff
   specs:
@@ -43,6 +50,8 @@ GEM
     addressable (2.3.1)
     american_date (1.0.0)
     arel (3.0.2)
+    bootstrap-will_paginate (0.0.6)
+      will_paginate
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -68,11 +77,15 @@ GEM
       multi_json (~> 1.0)
     ffi (1.1.0)
     hike (1.2.1)
+    hirb (0.6.2)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
+    jquery-ui-rails (1.1.0)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.7.4)
     less (2.2.1)
       commonjs (~> 0.2.6)
@@ -164,6 +177,7 @@ GEM
     uglifier (1.2.6)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    will_paginate (3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -173,9 +187,13 @@ PLATFORMS
 DEPENDENCIES
   active_scaffold
   american_date
+  bootstrap-will_paginate
   capybara
   coffee-rails (~> 3.2.1)
+  hirb
+  jquery-datatables-rails!
   jquery-rails
+  jquery-ui-rails
   pg
   pry-rails
   rails (= 3.2.7)
@@ -184,3 +202,4 @@ DEPENDENCIES
   sqlite3
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.0.0)

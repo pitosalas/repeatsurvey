@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require active_scaffold
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
  *= require_tree .
  */
