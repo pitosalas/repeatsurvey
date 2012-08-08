@@ -1,0 +1,16 @@
+<h1>Round <%= @round.number %> for Program "<%= @program.name %>"</h1>
+
+<table class="table table-condensed">
+   <thead>
+      <tr>
+         <th>Question</th>
+         <th>Average</th>
+         <th>Count</th>
+      </tr>
+   </thead>
+   <tbody>
+      <%= render @questions || "There are no questions yet" %>
+   </tbody>
+</table>
+
+<%= debug_me %>

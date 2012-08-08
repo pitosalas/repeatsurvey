@@ -1,5 +1,7 @@
 Repeatsurvey::Application.routes.draw do
 
+  get "rounds/report"
+
   namespace :admin do
     resources :values do as_routes end
     resources :questions do as_routes end
@@ -9,7 +11,11 @@ Repeatsurvey::Application.routes.draw do
   end
 
   resources :programs do
-    resources :rounds 
+    resources :rounds  do
+      member do
+        get 'report'
+      end
+    end
     resources :respondents
     resources :questions
   end
