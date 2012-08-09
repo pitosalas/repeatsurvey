@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/rweng/jquery-datatables-rails.git
-  revision: a6bde0aed270e9d3dac239d331f84f9c22817750
+  remote: git://github.com/bogdan/datagrid.git
+  revision: 420494d8f5edb199d8581496c2124944a7b17182
   specs:
-    jquery-datatables-rails (1.10.0)
-      jquery-rails
+    datagrid (0.6.2)
+      rails (>= 3.0)
 
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
@@ -190,8 +190,8 @@ DEPENDENCIES
   bootstrap-will_paginate
   capybara
   coffee-rails (~> 3.2.1)
+  datagrid!
   hirb
-  jquery-datatables-rails!
   jquery-rails
   jquery-ui-rails
   pg

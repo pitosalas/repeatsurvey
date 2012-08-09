@@ -1,12 +1,6 @@
 Repeatsurvey::Application.routes.draw do
 
-  get "respondent/show"
-
-  get "respondent/index"
-
-  get "programs/index"
-
-  get "rounds/report"
+  root :to => "programs#current"
 
   namespace :admin do
     resources :values do as_routes end
@@ -25,6 +19,7 @@ Repeatsurvey::Application.routes.draw do
     resources :respondents
     resources :questions
   end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,17 +1,27 @@
 <h2>Respondent: <%= @respondent.name %></h2>
-  <p>This respondent has answered at least some of the questions asked as part of this program: <%= @program.name %>. There were <%= @questions.length %> questions total, although notice that in each round not all questions are always asked. The organized might add or disable questions for one round or another, although that would be unusual. <p>
+  <p>This respondent has answered at least some of the questions asked as part of this program: <%= @program.name %>. 
+  </p>
+  <p>There were <%= @questions.length %> questions total, although notice that in each round not all questions are always asked. 
+  </p>
+  <p>Note that the organizer might add or disable questions for one round or another, although that would be unusual. </p>
 
-    <h4>Summary of responses across all rounds for <%= @respondent.name %></h4>
+    <h3>Summary of responses across all rounds for <%= @respondent.name %></h4>
 
-    <% @questions.in_groups_of(4) do |group| %>
-      <div class="row">
-        <% group.each do |item| %>
-          <div class="span3">
-            <% if !item.nil? %>
-              <% data = DataHolder.get(question: item.id, respondent: @respondent.id, round: :all) %>
-              <%= line_sparkline_markup(item.text, data) %>
+    <table class="table table-condensed table-bordered">
+      <caption>Trend line of response for each question.</caption>
+      <thead></thead>
+      <tbody>
+        <% @questions.in_groups_of(5) do |group| %>
+          <tr>
+            <% group.each do |item| %>
+              <td>
+                <% if !item.nil? %>
+                  <% data = DataHolder.get(question: item.id,   respondent: @respondent.id, round: :all) %>
+                  <%= line_sparkline_markup(item.text, data) %>
+                <% end %>
+              </td>
             <% end %>
-          </div>
+          </tr>
         <% end %>
-      </div>
-    <% end %>
+      </tbody>
+    </table>
