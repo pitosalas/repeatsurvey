@@ -7,13 +7,10 @@
       <div class="row">
         <% group.each do |item| %>
           <div class="span3">
-            <% if item.nil? %>
-              n/a
-            <% else %>
-              <%= item.text %>
-              <% d = DataHolder.get(question: item.id, respondent: @respondent.id, round: :all) %>
-              <%= d %>
-              <% end %>
+            <% if !item.nil? %>
+              <% data = DataHolder.get(question: item.id, respondent: @respondent.id, round: :all) %>
+              <%= line_sparkline_markup(item.text, data) %>
+            <% end %>
           </div>
         <% end %>
       </div>
