@@ -1,4 +1,18 @@
 <div class="page-header">
   <h1>Welcome to SurveyLogic</h1>
 </div>
-<%= standard_table( @programs, headers: ["Name", "Status"], commands: "command") %>
+<h3>Programs</h3>
+<div>
+  <%= datagrid_table(@program_report, @assets, 
+      {html: 
+        {class: "table table-bordered table-compressed"}})
+  %>
+
+  <%= link_to new_program_path, class: "btn btn-small" do %>
+    <%= content_tag(:i, "", class: "icon-info-sign") %>
+    New Program
+  <% end %>
+
+
+
+</div>

@@ -15,7 +15,12 @@ class ProgramsController < ApplicationController
     @questions = @program.questions
     @rounds = @program.rounds
     respond_with([:program => @program, :respondents => @respondents, 
-                 :question => @questions, :rounds => @rounds], :template => 'programs/show')
+                 :question => @questions, :rounds => @rounds], :template => 'show')
+  end
+
+  def index
+    @program_report = ProgramReport.new(params[:program_report])
+    @assets = @program_report.assets.page(params[:page])
   end
 
 end

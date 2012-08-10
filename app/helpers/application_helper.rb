@@ -19,6 +19,7 @@ module ApplicationHelper
       @headers << arg_hash[:commands] if arg_hash[:commands]
       content_tag(:table, class: "table") do
          st_generate_headers(headers)
+         st_generate_rows
       end
    end
 
