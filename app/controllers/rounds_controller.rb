@@ -6,6 +6,6 @@ class RoundsController < ApplicationController
      	@round = Round.find_by_id(params[:id])
       @questions = @program.questions.paginate(:page => params[:quest_page])
 #      @questions = @program.questions
-      respond_with([@round, @program, @questions])
+      respond_with(@round, @program, @questions)
   end
 end

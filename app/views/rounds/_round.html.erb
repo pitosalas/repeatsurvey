@@ -1,3 +1,15 @@
 <tr>
    <td><%= round.number %></td>
+   <td><%= round.status %></td>
+   <td><%= round.respondents.select(:name).uniq.length %></td>
+   <td>
+      <%= link_to t('.show'), program_round_path(round, @program), 
+          :class => 'btn btn-mini' %> | 
+      <%= link_to t('.edit'), edit_program_round_path(@program, round), 
+          :class => 'btn btn-mini' %> |
+      <%= link_to t('.delete'), program_round_path(round, @program), 
+          :method => :delete, 
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+          :class => 'btn btn-mini btn-danger' %>
+    </td>
 </tr>

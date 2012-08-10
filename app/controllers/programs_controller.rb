@@ -15,7 +15,8 @@ class ProgramsController < ApplicationController
     @questions = @program.questions
     @rounds = @program.rounds
     respond_with([:program => @program, :respondents => @respondents, 
-                 :question => @questions, :rounds => @rounds], :template => 'show')
+                 :question => @questions, :rounds => @rounds], 
+                 :template => 'programs/show')
   end
 
   def index

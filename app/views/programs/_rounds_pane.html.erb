@@ -1,0 +1,18 @@
+<h2> Rounds </h2>
+<p>Each round corresponds to one round of responses to the survey from all participants. Rounds occur on a periodic basis, say once a week.</p>
+<table class="table table-condensed table-bordered">
+   <thead>
+      <tr>
+         <th>Round number</th>
+         <th>Status</th>
+         <th>Responses so far</th>
+         <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+   </thead>
+   <tbody>
+      <%= render @rounds || "There are no rounds yet" %>
+   </tbody>
+</table>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+new_program_round_path(@program),
+:class => 'btn btn-primary' %>

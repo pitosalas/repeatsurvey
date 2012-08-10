@@ -1,3 +1,18 @@
 <tr>
+   <td><%= question.order %></td>
    <td><%= question.text %></td>
+   <td><%= question.active %></td>
+   <td><%= question.respondents.select(:name).uniq.length %></td>
+   <td><%= question.data_type%></td>
+   <td>
+      <%= link_to t('.show'), program_question_path(question, @program), 
+          :class => 'btn btn-mini' %> | 
+      <%= link_to t('.edit'), edit_program_question_path(@program, question), 
+          :class => 'btn btn-mini' %> |
+      <%= link_to t('delete'), program_question_path(question, @program), 
+          :method => :delete, 
+          :confirm => "are you sure?",
+          :class => 'btn btn-mini btn-danger' %>
+    </td>
 </tr>
+

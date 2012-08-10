@@ -1,39 +1,39 @@
-<h1>Program '<%= @program.name %>'</h1>
+<div class="page-header">
+   <h1>Program '<%= @program.name %>'</h1>
+</div>
 
-<h3> Respondents </h3>
-<table class="table table-condensed table-bordered">
-   <thead>
-      <tr>
-         <th>Respondent Name</th>
-      </tr>
-   </thead>
-   <tbody>
-      <%= render @respondents || "There are no respondents yet" %>
-   </tbody>
-</table>
+<div class="tabbable">
+   <%= render "program_tab_headers" %>
 
-<h3> Questions </h3>
-<table class="table table-condensed table-bordered">
-   <thead>
-      <tr>
-         <th>Question Text</th>
-      </tr>
-   </thead>
-   <tbody>
-      <%= render @questions || "There are no questions yet" %>
-   </tbody>
-</table>
-
-<h3> Rounds </h3>
-<table class="table table-condensed table-bordered">
-   <thead>
-      <tr>
-         <th>Round number</th>
-      </tr>
-   </thead>
-   <tbody>
-      <%= render @rounds || "There are no rounds yet" %>
-   </tbody>
-</table>
-
+   <div class="tab-content">
+      <div id="report-pane" class="tab-pane active">
+         <h3>Reports</h3>
+      </div>
+      <div id="summary-pane" class="tab-pane">
+         <h3>Summary Statistics</h3>
+      </div>
+      <div id="setting-pane" class="tab-pane">
+         <h3>Project Settings</h3>
+      </div>
+      <div id="participant-pane" class="tab-pane">
+         <h3>Participants</h3>
+         <table class="table table-condensed table-bordered">
+            <thead>
+               <tr>
+                  <th>Participant Name</th>
+               </tr>
+            </thead>
+            <tbody>
+               <%= render @respondents || "There are no Participant yet" %>
+            </tbody>
+         </table>
+      </div>
+      <div id="question-pane" class="tab-pane">
+         <%= render 'questions_pane' %>
+      </div>
+      <div id="round-pane" class="tab-pane">
+         <%= render 'rounds_pane' %>
+      </div>
+   </div>
+</div>
 <%= debug_enable false, @program, @respondents, @questions %>
