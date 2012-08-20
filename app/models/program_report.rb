@@ -15,4 +15,6 @@ class ProgramReport
         link_to('Show', program) + " | " +
         link_to('Edit', edit_program_path(program)) + " | " +
         link_to('', program, { method: :delete, class: "icon-remove-sign", data: { confirm: 'Are you sure?' }})
-    end
+  end
+end
+

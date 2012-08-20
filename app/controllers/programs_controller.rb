@@ -10,6 +10,11 @@ class ProgramsController < ApplicationController
     show_program
   end
 
+  def new
+    @program = Program.new
+    respond_with(@program)
+  end
+
   def show_program
     @respondents = @program.respondents
     @questions = @program.questions
