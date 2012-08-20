@@ -2,7 +2,7 @@ namespace :import do
 	require_relative "../metricalc/metricalc.rb"
 	surv = SurveyData.new
 	inp = InputData.new
-	inp.read "/mydev/metricalc/data/week9file.csv", surv
+	inp.read "lib/metricalc/data/week9file.csv", surv
 	surv.process
 	round_range = []
 
@@ -77,7 +77,6 @@ namespace :import do
 		end
 	end
 
-	# Convenient shorthand
 	def bulk_destroy(clazz)
 		puts "Destroying all objects of class #{clazz.to_s} (#{clazz.count})"
 		clazz.destroy_all
@@ -92,4 +91,10 @@ namespace :import do
 		bulk_destroy Question
 		bulk_destroy Value
 	end
+
+	desc "tell the path"
+	task :tell => :environment do
+		puts File.expand_path(".")
+	end
+
 end

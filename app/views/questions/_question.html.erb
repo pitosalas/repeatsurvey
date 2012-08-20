@@ -9,7 +9,7 @@
           :class => 'btn btn-mini' %> | 
       <%= link_to t('.edit'), edit_program_question_path(@program, question), 
           :class => 'btn btn-mini' %> |
-      <%= link_to t('delete'), program_question_path(question, @program), 
+      <%= link_to t('delete'), program_question_path(@program, question), 
           :method => :delete, 
           :confirm => "are you sure?",
           :class => 'btn btn-mini btn-danger' %>

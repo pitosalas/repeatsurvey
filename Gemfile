@@ -29,7 +29,8 @@ gem 'active_scaffold'
 gem 'will_paginate', '~> 3.0.0'
 gem 'bootstrap-will_paginate'
 gem 'jquery-ui-rails'
-gem  'datagrid', :github => "bogdan/datagrid"
+gem 'simple_form'
+gem "datagrid", :github => "bogdan/datagrid"
 
 
 
