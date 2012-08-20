@@ -1,20 +1,20 @@
 <ul class="nav nav-tabs">
-   <li class="active">
+   <li class="<%= 'active' if params[:tab] == 'reports' %>">
       <a href="#report-pane" data-toggle="tab">Reports</a>
    </li>
-   <li>
+   <li class="<%= 'active' if params[:tab] == 'summary' %>">
       <a href="#summary-pane" data-toggle="tab">Summary Stats</a>
    </li>
-   <li>
+   <li class="<%= 'active' if params[:tab] == 'rounds' %>">
       <a href="#round-pane" data-toggle="tab">Rounds</a>
    </li>
-   <li>
+   <li class="<%= 'active' if params[:tab] == 'settings' %>">
       <a href="#setting-pane" data-toggle="tab">Settings</a>
    </li>
-   <li>
+   <li class="<%= 'active' if params[:tab] == 'questions' %>">
       <a href="#question-pane" data-toggle="tab">Questions</a>
    </li>
-   <li>
+   <li class="<%= 'active' if params[:tab] == 'participants' %>">
       <a href="#participant-pane" data-toggle="tab">Partipants</a>
    </li>
 </ul>
