@@ -19,6 +19,9 @@ class ProgramsController < ApplicationController
     @respondents = @program.respondents
     @questions = @program.questions
     @rounds = @program.rounds
+    @questions_list = QuestionsList.new(params[:questions_list])
+    @ql_assets = @questions_list.assets.paginate(page: params[:page])
+
     respond_with([:program => @program, :respondents => @respondents, 
                  :question => @questions, :rounds => @rounds], 
                  :template => 'programs/show')

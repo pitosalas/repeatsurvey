@@ -6,16 +6,16 @@
    <%= render "program_tab_headers" %>
 
    <div class="tab-content">
-      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="report-pane">
-         <h3>Reports</h3>
+      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab]) then 'tab-pane active'  else 'tab-pane' end%>" id="report-pane">
+         <%= render 'reports_pane' %>
       </div>
-      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="summary-pane">
+      <div class="<%= if params[:tab] == 'summary' then 'tab-pane active'  else 'tab-pane' end%>" id="summary-pane">
          <h3>Summary Statistics</h3>
       </div>
-      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="setting-pane">
+      <div class="<%= if (params[:tab] == 'settings') then 'tab-pane active'  else 'tab-pane' end%>" id="setting-pane">
          <h3>Project Settings</h3>
       </div>
-      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="participant-pane">
+      <div class="<%= if (params[:tab] == 'participants')then 'tab-pane active'  else 'tab-pane' end%>" id="participant-pane">
          <h3>Participants</h3>
          <table class="table table-condensed table-bordered">
             <thead>
@@ -28,10 +28,10 @@
             </tbody>
          </table>
       </div>
-      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="question-pane">
+      <div class="<%= if (params[:tab] == 'questions')then 'tab-pane active'  else 'tab-pane' end%>" id="question-pane">
          <%= render 'questions_pane' %>
       </div>
-      <div class="<%= if (params[:tab] == 'tab1' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="round-pane">
+      <div class="<%= if (params[:tab] == 'rounds' )then 'tab-pane active'  else 'tab-pane' end%>" id="round-pane">
          <%= render 'rounds_pane' %>
       </div>
    </div>

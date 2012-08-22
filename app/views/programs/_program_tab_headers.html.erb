@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs">
-   <li class="<%= 'active' if params[:tab] == 'reports' %>">
+   <li class="<%= 'active' if (params[:tab] == 'reports'  || !params[:tab]) %>">
       <a href="#report-pane" data-toggle="tab">Reports</a>
    </li>
    <li class="<%= 'active' if params[:tab] == 'summary' %>">

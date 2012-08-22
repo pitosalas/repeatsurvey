@@ -2,20 +2,15 @@
 <p>Each survey has a series of questions. Generally they are quantitative, for example for a rating or an amount. This is in the nature of this product, which is to analyze a recurrent survey over a series of rounds and to produce longitudinal statistics.</p>
 <p>Best practice is not to change the set of questions once the survey is underway. However you often find that you decide on new questions you want to ask as the study proceeds.</p>
 <p>From this screen you may add new questions, and also activate and deactivate questions during the study. However note well that the statistics are a little more difficult to interpret when questions appear and dissappear during the surveys lifetime.</p>
-<table class="table table-condensed table-bordered" id="questions">
-   <thead>
-      <tr>
-         <th>Number</th>
-         <th>Text</th>
-         <th>Active</th>
-         <th>Responses so far</th>
-         <th>Data Type</th>
-         <th>Actions</th>
-      </tr>
-   </thead>
-   <tbody>
-      <%= render @questions || "There are no rounds yet" %>
-   </tbody>
-</table>
-<%= link_to "new", new_program_question_path(@program),
-:class => 'btn btn-primary' %>
+
+<div>
+  <%= datagrid_table(@questions_list, @ql_assets, 
+      {html: 
+        {class: "table table-bordered table-compressed"}})
+  %>
+
+  <%= link_to new_program_path, class: "btn btn-small" do %>
+    <%= content_tag(:i, "", class: "icon-info-sign") %>
+    New Question
+  <% end %>
+</div>

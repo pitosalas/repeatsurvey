@@ -5,7 +5,7 @@
    <td><%= question.respondents.select(:name).uniq.length %></td>
    <td><%= question.data_type%></td>
    <td>
-      <%= link_to t('.show'), program_question_path(question, @program), 
+      <%= link_to t('.show'), program_question_path(@program, question), 
           :class => 'btn btn-mini' %> | 
       <%= link_to t('.edit'), edit_program_question_path(@program, question), 
           :class => 'btn btn-mini' %> |

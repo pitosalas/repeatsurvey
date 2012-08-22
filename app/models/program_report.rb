@@ -5,10 +5,10 @@ class ProgramReport
     Program
   end
 
-  column(:name, :html => true, :order => false) do
+  column("name", :html => true, :order => true) do
    |program| link_to(program.name, program)
   end
-  column("rounds of surveys") { |program| program.rounds.count } 
+  column("rounds of surveys", order: true) { |program| program.rounds.count} 
   column("# of questions defined") { |program| program.questions.count }
   column(:edits, :html => true) do
     |program|

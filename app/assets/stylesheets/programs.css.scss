@@ -1,3 +1,13 @@
 // Place all the styles related to the programs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// DataGrid styling
+.order {
+  float: right;
+}
+
+// Reports Page
+#report-pane .row#report {
+  padding-top: 20px;
+}

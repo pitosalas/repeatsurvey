@@ -1,2 +1,19 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<div class="page-header">
+   <h1>Program '<%= @question.text %>'</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Question text</strong></dt>
+  <dd><%= @question.text %></dd>
+  <dt><strong>Order:</strong></dt>
+  <dd><%= @question.order %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to "Back", programs_path(@program, tag: "questions"), class: "btn" %>
+  <%= link_to "Edit", edit_program_question_path(@program, @question), class: "btn" %>
+  <%= link_to "Delete", program_question_path(@program, @question), 
+              method: 'delete',
+              confirm: 'Are you sure?',
+              class: 'btn btn-danger' %>
+</div>

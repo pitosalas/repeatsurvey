@@ -1,4 +1,7 @@
-<%= simple_form_for [@program, @question], :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for [@program, @question], 
+    url: program_questions_path(@program, tab: 'questions'), 
+    method: :post,
+    html: {  class: 'form-horizontal' } do |f| %>
   <fieldset>
     <legend>
       <%= controller.action_name.capitalize %> Question
@@ -9,7 +12,7 @@
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', program_questions_path(@program), :class => 'btn' %>
+      <%= link_to 'Cancel', program_path(@program, tab: "questions"), :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

@@ -2,6 +2,10 @@ class QuestionsController < ApplicationController
   respond_to :html, :xml, :json
 
   def index
+    @questions_list = questions_list.new(params[:program_report])
+    @ql_assets = @questions_list.assets.paginate(page: params[:page])
+  end
+
   end
 
   def new
@@ -14,14 +18,17 @@ class QuestionsController < ApplicationController
     @program = Program.find(params[:program_id])
     @question = @program.questions.new(params[:question])  
     if @question.save  
-      redirect_to @program, :notice => "Successfully created question."  
+      redirect_to program_path(@program,  tab: 'questions'), 
+                  notice: "Successfully created question."
     else  
       render :action => 'new'  
     end  
   end  
 
   def show
-    respond_with(@question)
+    @program = Program.find(params[:program_id])
+    @question = Question.find(params[:id])
+    respond_with(@program, @question)
   end
 
   def edit
