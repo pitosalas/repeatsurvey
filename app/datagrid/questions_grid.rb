@@ -5,6 +5,13 @@ class QuestionsGrid
     Question
   end
 
+  def initialize parameters
+    super(parameters)
+    puts "****** #{parameters}"
+  end
+
+
+
   column("ordering", order: true, html: true) do
     |q| q.order
   end

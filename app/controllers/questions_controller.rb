@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions_list = questions_list.new(params[:program_report])
-    @ql_assets = @questions_list.assets.paginate(page: params[:page])
+    @ql_assets = @questions_list.assets.paginate(page: params[:page].merge(order: {tab: "questions"}))
   end
 
   def new
