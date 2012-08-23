@@ -1,4 +1,4 @@
-class ProgramReport
+class ProgramsGrid
   include Datagrid
 
   scope do

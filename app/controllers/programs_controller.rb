@@ -19,8 +19,8 @@ class ProgramsController < ApplicationController
     @respondents = @program.respondents
     @questions = @program.questions
     @rounds = @program.rounds
-    @questions_list = QuestionsList.new(params[:questions_list])
-    @ql_assets = @questions_list.assets.paginate(page: params[:page])
+    @questions_grid = QuestionsGrid.new(params[:questions_grid])
+    @qg_assets = @questions_grid.assets.paginate(page: params[:page])
 
     respond_with([:program => @program, :respondents => @respondents, 
                  :question => @questions, :rounds => @rounds], 
@@ -28,8 +28,8 @@ class ProgramsController < ApplicationController
   end
 
   def index
-    @program_report = ProgramReport.new(params[:program_report])
-    @assets = @program_report.assets.page(params[:page])
+    @programs_grid = ProgramsGrid.new(params[:programs_grid])
+    @assets = @programs_grid.assets.page(params[:page])
   end
 
 end

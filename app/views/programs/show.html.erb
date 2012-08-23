@@ -28,7 +28,7 @@
             </tbody>
          </table>
       </div>
-      <div class="<%= if (params[:tab] == 'questions')then 'tab-pane active'  else 'tab-pane' end%>" id="question-pane">
+      <div class="<%= if (params[:tab] == 'questions') then 'tab-pane active'  else 'tab-pane' end%>" id="question-pane">
          <%= render 'questions_pane' %>
       </div>
       <div class="<%= if (params[:tab] == 'rounds' )then 'tab-pane active'  else 'tab-pane' end%>" id="round-pane">

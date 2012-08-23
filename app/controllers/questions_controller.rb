@@ -6,8 +6,6 @@ class QuestionsController < ApplicationController
     @ql_assets = @questions_list.assets.paginate(page: params[:page])
   end
 
-  end
-
   def new
     @program = Program.find(params[:program_id])
     @question = @program.questions.build
@@ -44,7 +42,6 @@ class QuestionsController < ApplicationController
     end  
     respond_with(:program, @question)  
   end  
-
 
   def destroy
     puts params
