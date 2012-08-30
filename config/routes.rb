@@ -11,6 +11,7 @@ Repeatsurvey::Application.routes.draw do
   end
 
   resources :programs do
+    match 'reports/:id' => 'reports#show', as: :reports
     resources :rounds  do
       member do
         get 'report'

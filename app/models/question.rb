@@ -13,4 +13,8 @@ class Question < ActiveRecord::Base
   def n_respondents round
       Value.where("round_id = ? AND question_id = ?", round.id, id).count("value")
    end
+
+   def short_name
+    "Question #{order}"
+  end
 end

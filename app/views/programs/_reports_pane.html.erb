@@ -1,22 +1,5 @@
-<p>All reports that are available are listed below. Reports only cover a single program. You can generate a report at any time, and refresh it to see the submissions come in.</p>
-<%= reports_list(:all) do |h| %>
-  <%= h.section_header "Reports By Question" %>
-  <%= h.report do %>
-    <%= h.report_title "Response Distribution" do %>
-      <%= h.report_blurb do %>
-        For each question, show the distribution of responses over all the rounds. For example, Question 1, Round 1, had 10% of the responses as a 1.0 and 90% as a 2.0
-      <% end %>
-    <% end %>
-    <%= h.report_thumbnail "sample_report.png" %>
-  <% end %>  
-  <%= h.report do %>
-    <%= h.report_title "Response Distribution" do %>
-      <%= h.report_blurb do %>
-        For each question, show the distribution of responses over all the rounds. For example, Question 1, Round 1, had 10% of the responses as a 1.0 and 90% as a 2.0
-      <% end %>
-    <% end %>
-    <%= h.report_thumbnail "sample_report.png" %>
-  <% end %>  
-
-<% end %>
-
+<div class="btn-group btn-group-vertical">
+  <button class="btn">1</button>
+  <button class="btn">2</button>
+  <button class="btn">3</button>
+</div>

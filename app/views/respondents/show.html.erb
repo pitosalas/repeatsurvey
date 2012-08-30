@@ -16,7 +16,7 @@
             <% group.each do |item| %>
               <td>
                 <% if !item.nil? %>
-                  <% data = DataHolder.get(question: item.id,   respondent: @respondent.id, round: :all) %>
+                  <% data = DatabaseDataCache.get(question: item.id,   respondent: @respondent.id, round: :all) %>
                   <%= line_sparkline_markup(item.text, data) %>
                 <% end %>
               </td>

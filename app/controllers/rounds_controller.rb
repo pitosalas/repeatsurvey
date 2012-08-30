@@ -8,4 +8,7 @@ class RoundsController < ApplicationController
 #      @questions = @program.questions
       respond_with(@round, @program, @questions)
   end
+
+  def show
+  end
 end
