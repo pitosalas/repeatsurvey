@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <ul class="nav nav-tabs nav-stacked" id="reports-navlist">
+        <li class="active" id="rep-all-q">
+          <%= link_to "Summary of all questions", program_reports_path(@program), 
+                    :remote => true, id: "reports-navlist", data: {toggle: "tab"} %>
+        </li>
+        <li id="rep-trend-q">
+          <a href="#" data-toggle="tab">Trend lines for all questions</a>
+        </li>
+        <li id="rep-det-all-q">
+          <a href="#" data-toggle="tab">Details on all questions</a>
+        </li>
+      </ul>
+    </div>
+    <div class="span10" id="report-html-content">
+    </div>
+  </div>
+</div>

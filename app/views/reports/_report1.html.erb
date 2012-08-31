@@ -1,10 +1,7 @@
-<h1>Report for <%= link_to(("Program '" + @program.name + "'"), program_path(@program)) %></h1>
-
-<p>This is the table</p>
 
 <%= report_table do |r| %>
   <%= r.report_headers do %>
-    <%= r.header :questions, "Learning Objectives", "width: 10%; text-align: right" %>
+    <%= r.header :questions, "Learning Objectives", "width: 30px; text-align: right" %>
     <%= r.header_collection :rounds, @program.rounds %>
     <%= r.header :chart, "Chart" %>
   <% end %>

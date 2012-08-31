@@ -1,0 +1,11 @@
+
+<%= report_table do |r| %>
+  <%= r.report_headers do %>
+    <%= r.header :questions, "Learning Objectives", "width: 30px; text-align: right" %>
+    <%= r.header_collection :rounds, @program.rounds %>
+    <%= r.header :chart, "Chart" %>
+  <% end %>
+  <%= r.report_rows do %>
+    <%= r.rows_collection :questions, @program.questions %>
+  <% end %>
+<% end %>

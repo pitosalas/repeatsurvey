@@ -1,19 +1,19 @@
 GIT
   remote: git://github.com/bogdan/datagrid.git
-  revision: 420494d8f5edb199d8581496c2124944a7b17182
+  revision: d79f1eb41d62b99c3685ce2743029df3de06815b
   specs:
-    datagrid (0.6.2)
+    datagrid (0.6.3)
       rails (>= 3.0)
 
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: ca703a2349e9a0c26dc5a8a5bb8f5d6dee3b0cff
+  revision: 0b12f376d4e1718a047638491c941a40199e7005
   specs:
-    twitter-bootstrap-rails (2.1.1)
+    twitter-bootstrap-rails (2.1.3)
       actionpack (>= 3.1)
       less-rails (~> 2.2.3)
       railties (>= 3.1)
-      therubyracer (= 0.10.1)
+      therubyracer (~> 0.10.2)
 
 GEM
   remote: https://rubygems.org/
@@ -31,7 +31,7 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.3)
-    active_scaffold (3.2.14)
+    active_scaffold (3.2.15)
       rails (>= 3.1.3)
     activemodel (3.2.7)
       activesupport (= 3.2.7)
@@ -50,7 +50,7 @@ GEM
     addressable (2.3.2)
     american_date (1.0.0)
     arel (3.0.2)
-    bootstrap-will_paginate (0.0.6)
+    bootstrap-will_paginate (0.0.8)
       will_paginate
     builder (3.0.0)
     capybara (1.1.2)
@@ -60,7 +60,7 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    childprocess (0.3.4)
+    childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
     coderay (1.0.7)
     coffee-rails (3.2.2)
@@ -75,25 +75,25 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffi (1.1.0)
+    ffi (1.1.5)
     hike (1.2.1)
-    hirb (0.6.2)
+    hirb (0.7.0)
     i18n (0.6.0)
     journey (1.0.4)
-    jquery-rails (2.0.2)
-      railties (>= 3.2.0, < 5.0)
+    jquery-rails (2.1.1)
+      railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    jquery-ui-rails (1.1.0)
+    jquery-ui-rails (2.0.0)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.7.4)
+    json (1.7.5)
     less (2.2.1)
       commonjs (~> 0.2.6)
     less-rails (2.2.3)
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.3.10.4)
-    libwebsocket (0.1.4)
+    libwebsocket (0.1.5)
       addressable
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -109,8 +109,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
-    pry-rails (0.1.6)
-      pry
+    pry-rails (0.2.1)
+      pry (>= 0.9.10)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -143,14 +143,14 @@ GEM
     rspec-core (2.11.1)
     rspec-expectations (2.11.2)
       diff-lcs (~> 1.1.3)
-    rspec-mocks (2.11.1)
+    rspec-mocks (2.11.2)
     rspec-rails (2.11.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
     rubyzip (0.9.9)
-    sass (3.1.20)
+    sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -163,21 +163,21 @@ GEM
     simple_form (2.0.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    slop (3.3.2)
+    slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
-    therubyracer (0.10.1)
+    therubyracer (0.10.2)
       libv8 (~> 3.3.10)
-    thor (0.15.4)
+    thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.33)
-    uglifier (1.2.6)
+    uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
     will_paginate (3.0.3)
