@@ -1,3 +1,13 @@
+<script>
+$('a#reports-navlist').on('show', function(e) {
+        $.alert("hello");
+        $.get('/programs/1/reports/report1', function(data) {
+                $('#report-html-content').html(data.content);
+        });
+});
+</script>
+
+
 <div class="container">
   <div class="row">
     <div class="span2">
@@ -6,8 +16,10 @@
           <a href="#" data-toggle="pill">Trend lines for all questions</a>
         </li>
         <li>
-        <%= link_to "Summary of all questions", program_reports_path(@program),
-                    remote: true, id: "reports-navlist", data: {toggle: "pill"} %>
+          <%= link_to "Summary of all questions", "#",
+                      id: "reports-navlist", 
+                      data: {toggle: "pill"} %>
+        </li> 
         <li class="active">
           <a href="#" data-toggle="pill">Trend lines for all questions</a>
         </li>
@@ -16,7 +28,8 @@
         </li>
       </ul>
     </div>
-    <div class="span10">
+    <div class="span10" id="report-html-content">
     </div>
   </div>
 </div>
+

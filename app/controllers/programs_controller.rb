@@ -1,5 +1,5 @@
 class ProgramsController < ApplicationController
-  respond_to :html, :xml, :json
+  respond_to :html, :xml, :json, :js
   def show
     @program = Program.find(params[:id])
     show_program

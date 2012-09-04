@@ -7,7 +7,7 @@ class QuestionsGrid
 
   def initialize parameters
     super(parameters)
-    puts "****** #{parameters}"
+    puts "****()()* #{parameters}"
   end
 
 
