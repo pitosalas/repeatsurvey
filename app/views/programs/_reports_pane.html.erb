@@ -1,24 +1,27 @@
 <script>
-$('a#reports-navlist').on('show', function(e) {
-        $.alert("hello");
-        $.get('/programs/1/reports/report1', function(data) {
-                $('#report-html-content').html(data.content);
-        });
-});
+  $(function() {
+    $('#reports').bind('show', function(e) {
+      if ($(e.target).attr('id') == 'reports-navlist')
+        $.ajax({
+          url: '<%= program_reports_path(@program) -%>',
+          data: { toggle: "tab" }, 
+          success: function(html){
+            $("div#report-html-content").html(html);
+          }
+        })
+    });
+  });
 </script>
-
 
 <div class="container">
   <div class="row">
     <div class="span2">
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked" id="reports">
         <li>
           <a href="#" data-toggle="pill">Trend lines for all questions</a>
         </li>
         <li>
-          <%= link_to "Summary of all questions", "#",
-                      id: "reports-navlist", 
-                      data: {toggle: "pill"} %>
+          <a href="#" data-toggle="pill" id="reports-navlist">Summart of all queries</a>
         </li> 
         <li class="active">
           <a href="#" data-toggle="pill">Trend lines for all questions</a>

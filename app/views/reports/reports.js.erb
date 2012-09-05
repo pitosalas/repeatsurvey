@@ -1,6 +1,0 @@
-$('a#reports-navlist').on('show', function(e) {
-        $.alert("hello");
-        $.get('/programs/1/reports/report1', function(data) {
-                $('#report-html-content').html(data.content);
-        });
-});
